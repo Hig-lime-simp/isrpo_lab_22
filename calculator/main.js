@@ -1,30 +1,37 @@
-const display = document.getElementById("display");
-const buttons = document.querySelectorAll("button");
+import { Calculator } from "./calculator.js";
 
-let expression = "";
+document.addEventListener("DOMContentLoaded", () => {
+    const calc = new Calculator();
+    calc.init();
+})
 
-buttons.forEach(button => {
-    button.addEventListener("click", () => {
-        const value = button.textContent;
+// const display = document.getElementById("display");
+// const buttons = document.querySelectorAll("button");
+
+// let expression = "";
+
+// buttons.forEach(button => {
+//     button.addEventListener("click", () => {
+//         const value = button.textContent;
         
-        if (value === "C") {
-            expression = "";
-            display.value = "";
-            return;
-        }
+//         if (value === "C") {
+//             expression = "";
+//             display.value = "";
+//             return;
+//         }
         
-        if (value === "=") {
-            try {
-                expression = eval(expression);
-                display.value = expression;
-            } catch {
-                display.value = "Ошибка";
-                expression = "";
-            }
-            return;
-        }
+//         if (value === "=") {
+//             try {
+//                 expression = eval(expression);
+//                 display.value = expression;
+//             } catch {
+//                 display.value = "Ошибка";
+//                 expression = "";
+//             }
+//             return;
+//         }
         
-        expression += value;
-        display.value = expression;
-    });
-});
+//         expression += value;
+//         display.value = expression;
+//     });
+// });
